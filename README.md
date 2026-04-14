@@ -75,8 +75,8 @@ Backend WS: ws://localhost:3000
 Для внешнего доступа:
 
 ```bash
-# Установите cloudflared: https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/
-cloudflared tunnel --url http://localhost:80
+# Установите cloudflared: winget install Cloudflare.cloudflared    
+cloudflared tunnel --url http://localhost:5173
 ```
 
 Полученную ссылку можно использовать для доступа извне.
