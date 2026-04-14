@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    environment:
+      - PUPPETEER_HEADLESS=true
+      - AVITO_COOKIES_PATH=./cookies/avito-cookies.json
+      - TARGET_CHAT_NAME=Рушан
+      - POLL_INTERVAL=5000
+    volumes:
+      - ./backend/cookies:/app/cookies
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
